@@ -47,4 +47,5 @@ class Move():
         #can be turned into real chess notation
         return self.getRankFile(self.startRow, self.startCol) +self.getRankFile(self.endRow, self.endCol)
     def getRankFile(self, r, c):
+        #get rank to file for chess board pieces
         return self.colToFiles[c] + self.rowsToRanks[r]
