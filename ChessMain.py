@@ -49,15 +49,10 @@ def main():
                     if move in validMoves:
                         gs.makeMove(move)
                         moveMade = True
-<<<<<<< HEAD
                         sqSelected = () #reset user clicks
                         playerClicks = []
                     else:
                         playerClicks = [sqSelected]
-=======
-                    sqSelected = () #reset user clicks
-                    playerClicks = []
->>>>>>> 9b71997f7cd9b11c78eee64bcb1771efbbdc49c2
 
             #key handlers
             elif e.type == p.KEYDOWN:
