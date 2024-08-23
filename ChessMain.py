@@ -1,5 +1,6 @@
 import pygame as p
-from Chess import ChessEngine
+# from Chess import ChessEngine
+import ChessEngine
 
 WIDTH = HEIGHT = 512
 DIMENSION = 8  # dimensions of a chess board are 8x8
@@ -46,12 +47,13 @@ def main():
                 if len(playerClicks) == 2: #after 2nd click
                     move = ChessEngine.Move(playerClicks[0], playerClicks[1], gs.board)
                     print(move.getChessNotation())
-                    if move in validMoves:
-                        gs.makeMove(move)
-                        moveMade = True
-                        sqSelected = () #reset user clicks
-                        playerClicks = []
-                    else:
+                    for i in range(len(validMoves)):
+                        if move == validMoves[i]:
+                            gs.makeMove(validMoves[i])
+                            moveMade = True
+                            sqSelected = () #reset user clicks
+                            playerClicks = []
+                    if not moveMade:
                         playerClicks = [sqSelected]
 
             #key handlers
